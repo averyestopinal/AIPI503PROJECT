@@ -12,14 +12,6 @@ def get_vehicle_info(vin):
             make = item["Value"]
         if item["Variable"] in ["Model"]:
             model = item["Value"]
-    # year =
-    # make = 
-    # model = 
-    print(year)
-    print(make)
-    print(model)
+    
     return year, make, model	
 		
-vin_num = input("What is vin number")
-
-get_vehicle_info(vin_num)
