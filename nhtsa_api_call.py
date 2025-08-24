@@ -1,7 +1,7 @@
 import requests
 
-def get_vehicle_info(vin,year):
-    url = f'https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVin/{vin}?format=json&modelyear={year}'
+def get_vehicle_info(vin):
+    url = f'https://vpic.nhtsa.dot.gov/api/vehicles/DecodeVin/{vin}?format=json'
     response = requests.get(url);
     data = response.json()
 
