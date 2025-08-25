@@ -1,2 +1,0 @@
-# AIPI503PROJECT
-Final project for AIPI503
