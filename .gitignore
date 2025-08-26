@@ -1,0 +1,16 @@
+# virtual environments
+venv/
+.venv/
+
+# python cache
+__pycache__/
+
+# log info and local stuff 
+*.log
+.DS_Store
+.idea/
+.vscode/
+
+# Environment & secrets
+.env
+env/
