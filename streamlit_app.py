@@ -21,9 +21,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from collections import Counter
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # Gets the current directory
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))       # Gets the current directory
 logo_img_file = os.path.join(BASE_DIR, "logo_image.png")
 car_img_file = os.path.join(BASE_DIR, "car_image.png")
+TOP3 = 3                                                    # Define top N makes to display
 
 # Check if the 'make_history' key is already in Streamlit's session state
 if "make_history" not in st.session_state:
@@ -51,13 +52,25 @@ Display a pie chart of the top 3 most searched vehicle makes.
             st.warning("No vehicle makes have been searched yet.")
             return
 """
+
+
+
+    if not st.session_state.make_history:
+        st.warning("No vehicle makes have been searched yet.")
+        return
+    
+    # Count how many times each make was searched
     counts = Counter(st.session_state.make_history)
-    top_3 = counts.most_common(3)                       # A tuple to hold values: (make_name, count)
+    
+    if len(counts) < TOP3:
+        st.warning(f"Not enough data to display Top 3. Showing Top {len(counts)} instead.")
 
+    # Get the top N (3 or fewer)
+    top_n = counts.most_common(min(len(counts), TOP3))
 
-    labels = [item[0].upper() for item in top_3]        # Label for the vehicle make, displayed in upper case for each slice of the pie chart
-    sizes = [item[1] for item in top_3]                 # Count of each make in the Top3. Used to determine how large each slice of the pie chart is.
-    colors = ['#4682B4', '#1E3F66', '#0B1F3A']    # Blue, dark blue, night blue   : colors of pie chart slices
+    labels = [item[0].upper() for item in top_n]        # Label for the vehicle make, displayed in upper case for each slice of the pie chart
+    sizes = [item[1] for item in top_n]                 # Count of each make in the Top3. Used to determine how large each slice of the pie chart is.
+    colors = ['#4682B4', '#1E3F66', '#0B1F3A'][:len(labels)]   #[colors of pie chart slices][match slice count]
     with st.container():
         
         st.markdown("""
