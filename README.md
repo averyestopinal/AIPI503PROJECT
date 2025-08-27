@@ -51,6 +51,10 @@ python cli_demo.py
 **Link to the Hugging Faces Space**
 
 https://huggingface.co/spaces/averyestopinal/AIPI503_Final
+
+**Link to the Hugging Faces App**
+
+ https://averyestopinal-aipi503-final.hf.space/
 ---
 
 🧩 Project Structure
