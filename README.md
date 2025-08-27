@@ -41,7 +41,7 @@ This app uses only standard Python libraries (no external dependencies).However,
 pip install -r requirements.txt
 
 4. Run the Streamlit app:
-streamlit run streamlit_app.py
+streamlit run app.py
 
 **How to Run cli_demo.py**
 This is a simple command-line version of the VIN decoder. Make sure your terminal is in the same directory as cli_demo.py.
@@ -50,12 +50,12 @@ python cli_demo.py
 
 **Link to the Hugging Faces Space**
 
-
+https://huggingface.co/spaces/averyestopinal/AIPI503_Final
 ---
 
 🧩 Project Structure
 .
-├── streamlit_app.py                # Entry point for the Streamlit application
+├── app.py                # Entry point for the Streamlit application
 ├── cli_demo.py                     # Command-line interface version of the VIN decoder
 ├── nhtsa_api_call.py               # Helper module for API requests
 ├── car_image.png                   # Image file used in the Streamlit application
