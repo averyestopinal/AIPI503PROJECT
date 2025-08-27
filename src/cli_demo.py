@@ -13,7 +13,7 @@ Administration) VIN decoding API via the helper module `nhtsa_api_call.py`.
 Usage:
     python cli_demo.py
 """
-import nhtsa_api_call, re, csv, os
+import src.nhtsa_api_call as nhtsa_api_call, re, csv, os
 import pandas as pd
 
 TOP3 = 3

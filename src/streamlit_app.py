@@ -14,7 +14,7 @@ Date: August 25, 2025
 """
 
 import streamlit as st  # Import the Streamlit library for creating the web app
-import nhtsa_api_call  # Import the API call function from external file
+import src.nhtsa_api_call as nhtsa_api_call  # Import the API call function from external file
 import os
 import re
 import pandas as pd
